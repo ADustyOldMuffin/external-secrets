@@ -409,6 +409,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-using-latest-image/" class="md-nav__link">
+        Using Latest Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-gitops-using-fluxcd/" class="md-nav__link">
+        GitOps using FluxCD
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -612,6 +636,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../provider-akeyless/" class="md-nav__link">
+        Akeyless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../provider-hashicorp-vault/" class="md-nav__link">
         HashiCorp Vault
       </a>
@@ -627,14 +663,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_7">
         Yandex
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Yandex" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           Yandex
         </label>
@@ -666,14 +702,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_8">
         Gitlab
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Gitlab" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
           Gitlab
         </label>
@@ -705,14 +741,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
       
-      <label class="md-nav__link" for="__nav_5_8">
+      <label class="md-nav__link" for="__nav_5_9">
         Oracle
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Oracle" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_9">
           <span class="md-nav__icon md-icon"></span>
           Oracle
         </label>
@@ -732,6 +768,18 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider-webhook/" class="md-nav__link">
+        Webhook
+      </a>
     </li>
   
 
@@ -911,9 +959,9 @@
       <span class="nt">role</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">iam-role</span>
       <span class="c1"># AWS Region to be used for the provider</span>
       <span class="nt">region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">eu-central-1</span>
-      <span class="c1"># Auth defines the information necessary to authenticate against AWS by</span>
-      <span class="c1"># getting the accessKeyID and secretAccessKey from an already created Kubernetes Secret</span>
+      <span class="c1"># Auth defines the information necessary to authenticate against AWS</span>
       <span class="nt">auth</span><span class="p">:</span>
+        <span class="c1"># Getting the accessKeyID and secretAccessKey from an already created Kubernetes Secret</span>
         <span class="nt">secretRef</span><span class="p">:</span>
           <span class="nt">accessKeyID</span><span class="p">:</span>
             <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">awssm-secret</span>
@@ -921,6 +969,12 @@
           <span class="nt">secretAccessKey</span><span class="p">:</span>
             <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">awssm-secret</span>
             <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">secret-access-key</span>
+        <span class="c1"># IAM roles for service accounts</span>
+        <span class="c1"># https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts-technical-overview.html</span>
+        <span class="nt">jwt</span><span class="p">:</span>
+          <span class="nt">serviceAccountRef</span><span class="p">:</span>
+            <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-serviceaccount</span>
+            <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sa-namespace</span>
 
     <span class="nt">vault</span><span class="p">:</span>
       <span class="nt">server</span><span class="p">:</span> <span class="s">&quot;https://vault.acme.org&quot;</span>
@@ -931,7 +985,17 @@
       <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;v2&quot;</span>
       <span class="c1"># vault enterprise namespace: https://www.vaultproject.io/docs/enterprise/namespaces</span>
       <span class="nt">namespace</span><span class="p">:</span> <span class="s">&quot;a-team&quot;</span>
+      <span class="c1"># base64 encoded string of certificate</span>
       <span class="nt">caBundle</span><span class="p">:</span> <span class="s">&quot;...&quot;</span>
+      <span class="c1"># Instead of caBundle you can also specify a caProvider</span>
+      <span class="c1"># this will retrieve the cert from a Secret or ConfigMap</span>
+      <span class="nt">caProvider</span><span class="p">:</span>
+        <span class="c1"># Can be Secret or ConfigMap</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Secret&quot;</span>
+        <span class="c1"># This is mandatory for ClusterSecretStore and not relevant for SecretStore</span>
+        <span class="nt">namespace</span><span class="p">:</span> <span class="s">&quot;my-cert-secret-namespace&quot;</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;my-cert-secret&quot;</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="s">&quot;cert-key&quot;</span>
       <span class="nt">auth</span><span class="p">:</span>
         <span class="c1"># static token: https://www.vaultproject.io/docs/auth/token</span>
         <span class="nt">tokenSecretRef</span><span class="p">:</span>

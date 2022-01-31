@@ -409,6 +409,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-using-latest-image/" class="md-nav__link">
+        Using Latest Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-gitops-using-fluxcd/" class="md-nav__link">
+        GitOps using FluxCD
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -612,6 +636,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../provider-akeyless/" class="md-nav__link">
+        Akeyless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../provider-hashicorp-vault/" class="md-nav__link">
         HashiCorp Vault
       </a>
@@ -627,14 +663,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_7">
         Yandex
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Yandex" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           Yandex
         </label>
@@ -666,14 +702,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_8">
         Gitlab
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Gitlab" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
           Gitlab
         </label>
@@ -705,14 +741,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
       
-      <label class="md-nav__link" for="__nav_5_8">
+      <label class="md-nav__link" for="__nav_5_9">
         Oracle
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Oracle" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_9">
           <span class="md-nav__icon md-icon"></span>
           Oracle
         </label>
@@ -732,6 +768,18 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider-webhook/" class="md-nav__link">
+        Webhook
+      </a>
     </li>
   
 
@@ -900,6 +948,14 @@ The SecretStore maps to exactly one instance of an external API.</p>
   <span class="c1"># Optional</span>
   <span class="nt">controller</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
 
+  <span class="c1"># You can specify retry settings for the http connection</span>
+  <span class="c1"># these fields allow you to set a maxRetries before failure, and</span>
+  <span class="c1"># an interval between the retries.</span>
+  <span class="c1"># Current supported providers: IBM</span>
+  <span class="nt">retrySettings</span><span class="p">:</span>
+    <span class="nt">maxRetries</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+    <span class="nt">retryInterval</span><span class="p">:</span> <span class="s">&quot;10s&quot;</span>
+
   <span class="c1"># provider field contains the configuration to access the provider</span>
   <span class="c1"># which contains the secret exactly one provider must be configured.</span>
   <span class="nt">provider</span><span class="p">:</span>
@@ -932,7 +988,16 @@ The SecretStore maps to exactly one instance of an external API.</p>
       <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;v2&quot;</span>
       <span class="c1"># vault enterprise namespace: https://www.vaultproject.io/docs/enterprise/namespaces</span>
       <span class="nt">namespace</span><span class="p">:</span> <span class="s">&quot;a-team&quot;</span>
+      <span class="c1"># base64 encoded string of certificate</span>
       <span class="nt">caBundle</span><span class="p">:</span> <span class="s">&quot;...&quot;</span>
+      <span class="c1"># Instead of caBundle you can also specify a caProvider</span>
+      <span class="c1"># this will retrieve the cert from a Secret or ConfigMap</span>
+      <span class="nt">caProvider</span><span class="p">:</span>
+        <span class="c1"># Can be Secret or ConfigMap</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Secret&quot;</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;my-cert-secret&quot;</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="s">&quot;cert-key&quot;</span>
+
       <span class="nt">auth</span><span class="p">:</span>
         <span class="c1"># static token: https://www.vaultproject.io/docs/auth/token</span>
         <span class="nt">tokenSecretRef</span><span class="p">:</span>

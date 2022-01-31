@@ -404,6 +404,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-using-latest-image/" class="md-nav__link">
+        Using Latest Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides-gitops-using-fluxcd/" class="md-nav__link">
+        GitOps using FluxCD
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -607,6 +631,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../provider-akeyless/" class="md-nav__link">
+        Akeyless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -713,6 +749,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vault-enterprise-and-eventual-consistency" class="md-nav__link">
+    Vault Enterprise and Eventual Consistency
+  </a>
+  
+    <nav class="md-nav" aria-label="Vault Enterprise and Eventual Consistency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-your-writes" class="md-nav__link">
+    Read Your Writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-inconsistent" class="md-nav__link">
+    Forward Inconsistent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -734,14 +797,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_7">
         Yandex
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Yandex" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           Yandex
         </label>
@@ -773,14 +836,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_8">
         Gitlab
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Gitlab" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
           Gitlab
         </label>
@@ -812,14 +875,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
       
-      <label class="md-nav__link" for="__nav_5_8">
+      <label class="md-nav__link" for="__nav_5_9">
         Oracle
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Oracle" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_9">
           <span class="md-nav__icon md-icon"></span>
           Oracle
         </label>
@@ -839,6 +902,18 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider-webhook/" class="md-nav__link">
+        Webhook
+      </a>
     </li>
   
 
@@ -1071,6 +1146,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vault-enterprise-and-eventual-consistency" class="md-nav__link">
+    Vault Enterprise and Eventual Consistency
+  </a>
+  
+    <nav class="md-nav" aria-label="Vault Enterprise and Eventual Consistency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-your-writes" class="md-nav__link">
+    Read Your Writes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-inconsistent" class="md-nav__link">
+    Forward Inconsistent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1141,7 +1243,7 @@ management. Vault itself implements lots of different secret engines, as of now 
   <span class="nt">refreshInterval</span><span class="p">:</span> <span class="s">&quot;15s&quot;</span>
   <span class="nt">secretStoreRef</span><span class="p">:</span>
     <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">vault-backend</span>
-    <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ClusterSecretStore</span>
+    <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
   <span class="nt">target</span><span class="p">:</span>
     <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-sync</span>
   <span class="nt">data</span><span class="p">:</span>
@@ -1161,10 +1263,12 @@ management. Vault itself implements lots of different secret engines, as of now 
 <h4 id="limitations">Limitations</h4>
 <p>Vault supports only simple key/value pairs - nested objects are not supported. Hence specifying <code>gjson</code> properties like other providers support it is not supported.</p>
 <h3 id="authentication">Authentication</h3>
-<p>We support three different modes for authentication:
+<p>We support five different modes for authentication:
 <a href="https://www.vaultproject.io/docs/auth/token">token-based</a>,
-<a href="https://www.vaultproject.io/docs/auth/approle">appRole</a> and
-<a href="https://www.vaultproject.io/docs/auth/kubernetes">kubernetes-native</a>, each one comes with it's own
+<a href="https://www.vaultproject.io/docs/auth/approle">appRole</a>,
+<a href="https://www.vaultproject.io/docs/auth/kubernetes">kubernetes-native</a>,
+<a href="https://www.vaultproject.io/docs/auth/ldap">ldap</a> and
+<a href="https://www.vaultproject.io/docs/auth/jwt">jwt/odic</a>, each one comes with it's own
 trade-offs. Depending on the authentication method you need to adapt your environment.</p>
 <h4 id="token-based-authentication">Token-based authentication</h4>
 <p>A static token is stored in a <code>Kind=Secret</code> and is used to authenticate with vault.</p>
@@ -1280,6 +1384,8 @@ in a <code>Kind=Secret</code> referenced by the <code>secretRef</code>.</p>
         <span class="c1"># VaultLdap authenticates with Vault using the LDAP auth mechanism</span>
         <span class="c1"># https://www.vaultproject.io/docs/auth/ldap</span>
         <span class="nt">ldap</span><span class="p">:</span>
+          <span class="c1"># Path where the LDAP authentication backend is mounted</span>
+          <span class="nt">path</span><span class="p">:</span> <span class="s">&quot;ldap&quot;</span>
           <span class="c1"># LDAP username</span>
           <span class="nt">username</span><span class="p">:</span> <span class="s">&quot;username&quot;</span>
           <span class="nt">secretRef</span><span class="p">:</span>
@@ -1308,6 +1414,8 @@ or <code>Kind=ClusterSecretStore</code> resource.</p>
         <span class="c1"># VaultJwt authenticates with Vault using the JWT/OIDC auth mechanism</span>
         <span class="c1"># https://www.vaultproject.io/docs/auth/jwt</span>
         <span class="nt">jwt</span><span class="p">:</span>
+          <span class="c1"># Path where the JWT authentication backend is mounted</span>
+          <span class="nt">path</span><span class="p">:</span> <span class="s">&quot;jwt&quot;</span>
           <span class="c1"># JWT role configured in a Vault server, optional.</span>
           <span class="nt">role</span><span class="p">:</span> <span class="s">&quot;vault-jwt-role&quot;</span>
           <span class="nt">secretRef</span><span class="p">:</span>
@@ -1315,6 +1423,28 @@ or <code>Kind=ClusterSecretStore</code> resource.</p>
             <span class="nt">namespace</span><span class="p">:</span> <span class="s">&quot;secret-admin&quot;</span>
             <span class="nt">key</span><span class="p">:</span> <span class="s">&quot;jwt-token&quot;</span>
 </code></pre></div>
+
+<h3 id="vault-enterprise-and-eventual-consistency">Vault Enterprise and Eventual Consistency</h3>
+<p>When using Vault Enterprise with <a href="https://www.vaultproject.io/docs/enterprise/consistency#performance-standby-nodes">performance standby nodes</a>,
+any follower can handle read requests immediately after the provider has
+authenticated. Since Vault becomes eventually consistent in this mode, these
+requests can fail if the login has not yet propagated to each server's local
+state.</p>
+<p>Below are two different solutions to this scenario. You'll need to review them
+and pick the best fit for your environment and Vault configuration.</p>
+<h4 id="read-your-writes">Read Your Writes</h4>
+<p>The simplest method is simply utilizing the <code>X-Vault-Index</code> header returned on
+all write requests (including logins). Passing this header back on subsequent
+requests instructs the Vault client to retry the request until the server has an
+index greater than or equal to that returned with the last write.</p>
+<p>Obviously though, this has a performance hit because the read is blocked until
+the follower's local state has caught up.</p>
+<h4 id="forward-inconsistent">Forward Inconsistent</h4>
+<p>In addition to the aforementioned <code>X-Vault-Index</code> header, Vault also supports
+proxying inconsistent requests to the current cluster leader for immediate
+read-after-write consistency. This is achieved by setting the <code>X-Vault-Inconsistent</code>
+header to <code>forward-active-node</code>. By default, this behavior is disabled and must
+be explicitly enabled in the server's <a href="https://www.vaultproject.io/docs/configuration/replication#allow_forwarding_via_header">replication configuration</a>.</p>
                 
               
               
@@ -1334,7 +1464,7 @@ or <code>Kind=ClusterSecretStore</code> resource.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../provider-ibm-secrets-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Secrets Manager" rel="prev">
+        <a href="../provider-akeyless/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Akeyless" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1343,7 +1473,7 @@ or <code>Kind=ClusterSecretStore</code> resource.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Secrets Manager
+              Akeyless
             </div>
           </div>
         </a>
